@@ -2,87 +2,133 @@
 <html lang="tr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesap Silme - Mirket</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hesap Silme - Mirket</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      color: #333;
+    }
 
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            text-align: center;
-        }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      text-align: center;
+    }
 
-        h1 {
-            color: #ff5a5f;
-        }
+    h1 {
+      color: #ff5a5f;
+    }
 
-        p {
-            margin: 15px 0;
-            text-align: left;
-        }
+    p {
+      margin: 15px 0;
+      text-align: left;
+    }
 
-        .email {
-            font-weight: bold;
-            color: #ff5a5f;
-        }
+    .email {
+      font-weight: bold;
+      color: #ff5a5f;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #ff5a5f;
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #ff5a5f;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
-        .btn:hover {
-            background-color: #e14e50;
-        }
-    </style>
+    .btn:hover {
+      background-color: #e14e50;
+    }
+
+    .language-toggle {
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .language-toggle button {
+      margin: 0 5px;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .language-toggle button:hover {
+      background-color: #0056b3;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script>
+    function toggleLanguage(language) {
+      document.getElementById('tr').classList.toggle('hidden', language !== 'tr');
+      document.getElementById('en').classList.toggle('hidden', language !== 'en');
+    }
+  </script>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Hesap Silme</h1>
-        <p>Mirket uygulamasında hesabınızı silmek için aşağıdaki adımları izleyebilirsiniz:</p>
-        <ol>
-            <li>
-                Uygulamanın alt kısmında bulunan <strong>Profil</strong> butonuna dokunun.
-            </li>
-            <li>
-                Sağ üst köşede bulunan <strong>üç nokta</strong> (⋮) simgesine tıklayın.
-            </li>
-            <li>
-                Açılan menüden <strong>Profili Güncelle</strong> seçeneğine dokunun.
-            </li>
-            <li>
-                Bu sayfanın en altına inerek <strong>"Hesabı Sil"</strong> butonuna tıklayın.
-            </li>
-        </ol>
-        <p>Hesabınızı bu adımlarla silemiyorsanız, <span class="email">info@mirket.org</span> adresine
-            telefon numaranız ve hesap silme talebinizi içeren bir e-posta gönderin.</p>
-        <p>E-posta ile iletilen talepler 3 iş günü içinde işlenecektir.</p>
-        <a href="mailto:info@mirket.org?subject=Hesap Silme Talebi" class="btn">Hesap Silme Talebi Gönder</a>
+  <div class="container">
+    <div class="language-toggle">
+      <button onclick="toggleLanguage('tr')">Türkçe</button>
+      <button onclick="toggleLanguage('en')">English</button>
     </div>
+
+    <!-- Türkçe İçerik -->
+    <div id="tr">
+      <h1>Hesap Silme</h1>
+      <p>Mirket uygulamasında hesabınızı silmek için aşağıdaki adımları izleyebilirsiniz:</p>
+      <ol>
+        <li>Uygulamanın alt kısmında bulunan <strong>Profil</strong> butonuna dokunun.</li>
+        <li>Sağ üst köşede bulunan <strong>üç nokta</strong> (⋮) simgesine tıklayın.</li>
+        <li>Açılan menüden <strong>Profili Güncelle</strong> seçeneğine dokunun.</li>
+        <li>Bu sayfanın en altına inerek <strong>"Hesabı Sil"</strong> butonuna tıklayın.</li>
+      </ol>
+      <p>Hesabınızı bu adımlarla silemiyorsanız, <span class="email">info@mirket.org</span> adresine telefon numaranız
+        ve hesap silme talebinizi içeren bir e-posta gönderin.</p>
+      <p>E-posta ile iletilen talepler 3 iş günü içinde işlenecektir.</p>
+      <a href="mailto:info@mirket.org?subject=Hesap Silme Talebi" class="btn">Hesap Silme Talebi Gönder</a>
+    </div>
+
+    <!-- İngilizce İçerik -->
+    <div id="en" class="hidden">
+      <h1>Account Deletion</h1>
+      <p>To delete your account in the Mirket application, please follow these steps:</p>
+      <ol>
+        <li>Tap on the <strong>Profile</strong> button located at the bottom navigation bar.</li>
+        <li>Click on the <strong>three dots</strong> (⋮) icon in the top-right corner.</li>
+        <li>Select the <strong>Update Profile</strong> option from the menu.</li>
+        <li>Scroll down to the bottom of this page and tap the <strong>"Delete Account"</strong> button.</li>
+      </ol>
+      <p>If you cannot delete your account using these steps, please send an email to <span
+          class="email">info@mirket.org</span> with your phone number and a request for account deletion.</p>
+      <p>Requests sent via email will be processed within 3 business days.</p>
+      <a href="mailto:info@mirket.org?subject=Account Deletion Request" class="btn">Send Account Deletion Request</a>
+    </div>
+  </div>
 </body>
 
 </html>
